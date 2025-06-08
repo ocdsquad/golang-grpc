@@ -7,6 +7,8 @@ import (
 	pb "github.com/ocdsquad/golang-grpc/proto" // Adjust the import path to your actual project structure
 )
 
+// TODO: add implementation for server side streaming, client streaming and bidirectional streaming
+
 func callSayHello(client pb.GreetServiceClient) {
 	// Create a request with no parameters
 
@@ -18,7 +20,7 @@ func callSayHello(client pb.GreetServiceClient) {
 	defer cancel()
 	req := &pb.NoParam{}
 
-	// Call the SayHello method
+	// Call the Greet method
 	resp, err := client.Greet(ctx, req)
 	if err != nil {
 		log.Fatalf("Error calling Greet: %v", err)
