@@ -1,6 +1,7 @@
 syntax = "proto3";
 
-option go_package = "github.com/ocdsquad/golang-grpc/proto";
+// option go_package = "github.com/ocdsquad/golang-grpc/proto";
+option go_package = "./proto";
 
 service GreetService {
     rpc Greet(NoParam) returns (GreetResponse);
