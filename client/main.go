@@ -25,9 +25,12 @@ func main() {
 	client := pb.NewGreetServiceClient(conn)
 	log.Printf("Client connected to server on %s", port)
 
-	// names := &pb.NamesList{
-	// 	Names: []string{"Alice", "Bob", "Charlie"},
-	// }
+	names := &pb.NameList{
+		Names: []string{"Alice", "Bob", "Charlie"},
+	}
 
-	callSayHello(client)
+	// callSayHello(client)
+	// callGreetServerStream(client, names)
+	callGreetClientStream(client, names)
+	// callGreetBidirectionalStream(client, names)
 }
